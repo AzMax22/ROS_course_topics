@@ -3,7 +3,7 @@
   <arg name="x_pos" default="-2.0" doc="start location robot on Z"/>
   <arg name="y_pos" default="-0.5" doc="start location robot on Y"/>
   <arg name="z_pos" default="0.0" doc="start location robot on Z"/>
-  <arg name="gazebo_gui" default="false" doc="run gazebo_gui"/>
+  <arg name="gazebo_gui" default="true" doc="run gazebo_gui"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/turtlebot3_world.world"/>
