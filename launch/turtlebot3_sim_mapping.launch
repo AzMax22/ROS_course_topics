@@ -1,0 +1,16 @@
+<launch>
+  <arg name="rviz" default="true" />
+  <arg name="gazebo_gui" default="false" doc="run gazebo_gui"/>
+  <arg name="slam_method" default="hector" doc="slam type [gmapping, hector]"/>
+
+  <!-- запуск симулятора -->
+  <include file="$(find super_robot_package)/launch/turtlebot3_sim_start.launch">
+     <arg name="gazebo_gui" value="$(arg gazebo_gui)"/>
+  </include>
+
+  <!-- запуск slam -->
+  <include file="$(find super_robot_package)/launch/turtlebot3_my_$(arg slam_method).launch" />
+
+  <!-- запуск rviz -->
+  <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(find super_robot_package)/rviz/sim_mapping.rviz" />    
+</launch>
