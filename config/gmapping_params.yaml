@@ -1,6 +1,6 @@
 base_frame: base_footprint
 map_frame: map
-delta: 0.1
+delta: 0.08
 
 
 srr: 0.1
